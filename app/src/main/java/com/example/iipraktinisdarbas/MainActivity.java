@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
         this.ddSelection = (Spinner) findViewById(R.id.ddSelection);
         ArrayList<String> selectionOptionList = new ArrayList<>();
-       /*electionOptionList.add("Words");
+       /*SelectionOptionList.add("Words");
         selectionOptionList.add("Chars");
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, selectionOptionList);*/
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this, R.array.spinner_array, android.R.layout.simple_spinner_item);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.ddSelection.setAdapter(arrayAdapter);
     }
@@ -37,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
         String userInputText = edUserInput.getText().toString();
 
         String selection = this.ddSelection.getSelectedItem().toString();
+        int resId = R.string.char_selection;
+
+        Toast.makeText(this,String.valueOf(resId), Toast.LENGTH_SHORT).show();
+
+        String resValue = getResources().getString(R.string.char_selection);
+        Toast.makeText(this,String.valueOf(resValue), Toast.LENGTH_SHORT).show();
+
         if (selection.equalsIgnoreCase("Charts")) {
             int count = getCharsCount(userInputText);
             tvOutput.setText(String.valueOf(count));
