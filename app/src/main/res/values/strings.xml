@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">II praktinis darbas</string>
+    <string name="btn_calculate_caption">Calculate</string>
 </resources>
