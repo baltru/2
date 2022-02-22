@@ -11,15 +11,15 @@
         android:id="@+id/tvOutput"
         android:layout_width="57dp"
         android:layout_height="42dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toEndOf="@+id/btnCalculate"
-        app:layout_constraintTop_toBottomOf="@+id/ddSelection" />
+        app:layout_constraintTop_toTopOf="@+id/btnCalculate"
+        tools:layout_editor_absoluteX="352dp" />
 
     <Button
         android:id="@+id/btnCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
         android:onClick="btnCalculateonClick"
         android:text="@string/btn_calculate_caption"
         app:layout_constraintStart_toEndOf="@id/edUserInput"
@@ -29,13 +29,13 @@
         android:id="@+id/edUserInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="626dp"
+        android:layout_marginLeft="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCalculate"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvOutput" />
+        app:layout_constraintTop_toTopOf="@+id/tvOutput"
+        app:layout_constraintVertical_bias="0.8" />
 
     <Spinner
         android:id="@+id/ddSelection"

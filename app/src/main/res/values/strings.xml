@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">II praktinis darbas</string>
     <string name="btn_calculate_caption">Calculate</string>
+    <string name="char_selection">Char</string>
     <string-array name="spinner_array">
         <item>Words</item>
         <item>Chars</item>
