@@ -9,11 +9,12 @@
 
     <TextView
         android:id="@+id/tvOutput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintStart_toEndOf="@id/btnCalculate"
-        app:layout_constraintTop_toBottomOf="@id/ddSelection"/>
+        android:layout_width="57dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/btnCalculate"
+        app:layout_constraintTop_toBottomOf="@+id/ddSelection" />
 
     <Button
         android:id="@+id/btnCalculate"
@@ -22,37 +23,25 @@
         android:onClick="btnCalculateonClick"
         android:text="@string/btn_calculate_caption"
         app:layout_constraintStart_toEndOf="@id/edUserInput"
-        app:layout_constraintTop_toBottomOf="@id/ddSelection"/>
+        app:layout_constraintTop_toBottomOf="@id/ddSelection" />
 
     <EditText
         android:id="@+id/edUserInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ddSelection"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/ddSelection"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnCalculate2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="142dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnCalculate"
-        app:layout_constraintHorizontal_bias="0.877"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edUserInput"
-        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

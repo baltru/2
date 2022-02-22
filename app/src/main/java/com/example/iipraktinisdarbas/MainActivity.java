@@ -15,8 +15,6 @@ import static com.example.iipraktinisdarbas.utils.ElementsCalculator.getCharsCou
 public class MainActivity extends AppCompatActivity {
 
     Spinner ddSelection;
-    EditText edUserInput;
-    TextView tvOutput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
         this.ddSelection = (Spinner) findViewById(R.id.ddSelection);
         ArrayList<String> selectionOptionList = new ArrayList<>();
-        selectionOptionList.add("Words");
-        selectionOptionList.add("Chart");
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, selectionOptionList);
-        // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.array.selection_options, android.R.layout.single_spinner_item);
+       /*electionOptionList.add("Words");
+        selectionOptionList.add("Chars");
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, selectionOptionList);*/
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_array, android.R.layout.simple_spinner_item);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.ddSelection.setAdapter(arrayAdapter);
     }
@@ -42,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         if (selection.equalsIgnoreCase("Charts")) {
             int count = getCharsCount(userInputText);
             tvOutput.setText(String.valueOf(count));
-        }
+            }
     }
-
 }
