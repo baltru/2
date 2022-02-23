@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         this.ddSelection.setAdapter(arrayAdapter);
     }
 
-    public void btnCalculateonClick (View view) {
+    public void btnCalculateOnClick (View view) {
         EditText edUserInput = this.findViewById(R.id.edUserInput);
         TextView tvOutput = findViewById(R.id.tvOutput);
         String userInputText = edUserInput.getText().toString();
