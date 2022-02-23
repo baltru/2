@@ -23,17 +23,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         this.ddSelection = (Spinner) findViewById(R.id.ddSelection);
-        ArrayList<String> selectionOptionList = new ArrayList<>();
-       /*SelectionOptionList.add("Words");
-        selectionOptionList.add("Chars");
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, selectionOptionList);*/
+        ArrayList<String> selectionOptionsList = new ArrayList<>();
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this, R.array.spinner_array, android.R.layout.simple_spinner_item);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.ddSelection.setAdapter(arrayAdapter);
     }
 
-    public void btnCalculateOnClick (View view) {
-        EditText edUserInput = this.findViewById(R.id.edUserInput);
+    public void btnCalculateOnClick(View view) {
+        EditText edUserInput = findViewById(R.id.edUserInput);
         TextView tvOutput = findViewById(R.id.tvOutput);
         String userInputText = edUserInput.getText().toString();
 
@@ -45,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
         String resValue = getResources().getString(R.string.char_selection);
         Toast.makeText(this,String.valueOf(resValue), Toast.LENGTH_SHORT).show();
 
-        if (selection.equalsIgnoreCase("Charts")) {
+        if(selection.equalsIgnoreCase("Chars")){
             int count = getCharsCount(userInputText);
             tvOutput.setText(String.valueOf(count));
-            }
+        }
     }
 }

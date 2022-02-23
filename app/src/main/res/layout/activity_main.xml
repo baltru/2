@@ -6,67 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <TextView
         android:id="@+id/tvOutput"
-        android:layout_width="204dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="169dp"
-        android:layout_marginEnd="184dp"
-        android:layout_marginBottom="516dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/btnCalculate"
+        app:layout_constraintTop_toBottomOf="@+id/ddSelection" />
 
     <Button
         android:id="@+id/btnCalculate"
-        android:layout_width="153dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="258dp"
-        android:layout_marginTop="2dp"
-        android:onClick="btnCalculateOnClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/btn_calculate_caption"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.764"
+        android:onClick="btnCalculateOnClick"
         app:layout_constraintStart_toEndOf="@+id/edUserInput"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ddSelection"
-        app:layout_constraintVertical_bias="0.023"
-        tools:ignore="UsingOnClickInXml" />
+        app:layout_constraintTop_toBottomOf="@+id/ddSelection" />
 
     <EditText
         android:id="@+id/edUserInput"
-        android:layout_width="229dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="207dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/addtext"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/tvOutput"
-        app:layout_constraintEnd_toStartOf="@+id/btnCalculate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ddSelection" />
 
     <Spinner
         android:id="@+id/ddSelection"
-        android:layout_width="407dp"
-        android:layout_height="59dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
-
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
