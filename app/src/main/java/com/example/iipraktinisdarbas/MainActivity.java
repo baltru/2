@@ -41,13 +41,6 @@ public class MainActivity extends AppCompatActivity {
         String userInputText = edUserInput.getText().toString();
         String selection = this.ddSelection.getSelectedItem().toString();
 
-        if (selection.equalsIgnoreCase(getResources().getString(R.string.char_selection))) {
-            int count = ElementsCalculator.getCharsCount(userInputText);
-            tvOutput.setText(String.valueOf(count));
-        }
-        if (selection.equalsIgnoreCase(getResources().getString(R.string.numbers_selection))) {
-            tvOutput.setText(String.valueOf(ElementsCalculator.getNumbersCount(userInputText)));
-        }
         if (selection.equalsIgnoreCase(getResources().getString(R.string.words_selection))) {
             int count = ElementsCalculator.getCharsCount(userInputText);
             tvOutput.setText(String.valueOf(ElementsCalculator.getWordsCount(userInputText)));
@@ -55,6 +48,17 @@ public class MainActivity extends AppCompatActivity {
         else {
             String resValue = getResources().getString(R.string.dff_format);
             Toast.makeText(this, String.valueOf(resValue), Toast.LENGTH_SHORT).show();
-            }
+        }
+        if (selection.equalsIgnoreCase(getResources().getString(R.string.char_selection))) {
+            int count = ElementsCalculator.getCharsCount(userInputText);
+            tvOutput.setText(String.valueOf(count));
+        }
+        if (selection.equalsIgnoreCase(getResources().getString(R.string.numbers_selection))) {
+            tvOutput.setText(String.valueOf(ElementsCalculator.getNumbersCount(userInputText)));
+        }
+        else {
+            String resValue = getResources().getString(R.string.dff_format);
+            Toast.makeText(this, String.valueOf(resValue), Toast.LENGTH_SHORT).show();
         }
     }
+}
