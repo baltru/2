@@ -40,12 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         String userInputText = edUserInput.getText().toString();
         String selection = this.ddSelection.getSelectedItem().toString();
-        int resId = R.string.char_selection;
-
-        Toast.makeText(this,String.valueOf(resId), Toast.LENGTH_SHORT).show();
-
-        String resValue = getResources().getString(R.string.char_selection);
-        Toast.makeText(this,String.valueOf(resValue), Toast.LENGTH_SHORT).show();
 
         if (selection.equalsIgnoreCase(getResources().getString(R.string.char_selection))) {
             int count = ElementsCalculator.getCharsCount(userInputText);
@@ -58,5 +52,9 @@ public class MainActivity extends AppCompatActivity {
             int count = ElementsCalculator.getCharsCount(userInputText);
             tvOutput.setText(String.valueOf(ElementsCalculator.getWordsCount(userInputText)));
         }
+        else {
+            String resValue = getResources().getString(R.string.dff_format);
+            Toast.makeText(this, String.valueOf(resValue), Toast.LENGTH_SHORT).show();
+            }
+        }
     }
-}
