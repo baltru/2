@@ -13,9 +13,13 @@ import java.util.ArrayList;
 
 import static com.example.iipraktinisdarbas.utils.ElementsCalculator.getCharsCount;
 
+import com.example.iipraktinisdarbas.utils.ElementsCalculator;
+
 public class MainActivity extends AppCompatActivity {
 
     Spinner ddSelection;
+    EditText edUserInput;
+    TextView tvOutput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         this.ddSelection = (Spinner) findViewById(R.id.ddSelection);
+        this.edUserInput = findViewById(R.id.edUserInput);
+        this.tvOutput = findViewById(R.id.tvOutput);
+
         ArrayList<String> selectionOptionsList = new ArrayList<>();
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this, R.array.spinner_array, android.R.layout.simple_spinner_item);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -30,10 +37,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnCalculateOnClick(View view) {
-        EditText edUserInput = findViewById(R.id.edUserInput);
-        TextView tvOutput = findViewById(R.id.tvOutput);
-        String userInputText = edUserInput.getText().toString();
 
+        String userInputText = edUserInput.getText().toString();
         String selection = this.ddSelection.getSelectedItem().toString();
         int resId = R.string.char_selection;
 
@@ -42,9 +47,16 @@ public class MainActivity extends AppCompatActivity {
         String resValue = getResources().getString(R.string.char_selection);
         Toast.makeText(this,String.valueOf(resValue), Toast.LENGTH_SHORT).show();
 
-        if(selection.equalsIgnoreCase("Chars")){
-            int count = getCharsCount(userInputText);
+        if (selection.equalsIgnoreCase(getResources().getString(R.string.char_selection))) {
+            int count = ElementsCalculator.getCharsCount(userInputText);
             tvOutput.setText(String.valueOf(count));
+        }
+        if (selection.equalsIgnoreCase(getResources().getString(R.string.numbers_selection))) {
+            tvOutput.setText(String.valueOf(ElementsCalculator.getNumbersCount(userInputText)));
+        }
+        if (selection.equalsIgnoreCase(getResources().getString(R.string.words_selection))) {
+            int count = ElementsCalculator.getCharsCount(userInputText);
+            tvOutput.setText(String.valueOf(ElementsCalculator.getWordsCount(userInputText)));
         }
     }
 }

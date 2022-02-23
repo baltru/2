@@ -21,8 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/btn_calculate_caption"
         android:onClick="btnCalculateOnClick"
+        android:text="@string/btn_calculate_caption"
         app:layout_constraintStart_toEndOf="@+id/edUserInput"
         app:layout_constraintTop_toBottomOf="@+id/ddSelection" />
 
@@ -43,5 +43,20 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSecond"
+        android:layout_width="113dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="563dp"
+        android:onClick="btnSecondOnClick"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalculate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
