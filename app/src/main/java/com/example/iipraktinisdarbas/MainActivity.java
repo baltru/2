@@ -53,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
             int count = ElementsCalculator.getCharsCount(userInputText);
             tvOutput.setText(String.valueOf(count));
         }
+        else {
+            String resValue = getResources().getString(R.string.dff_format);
+            Toast.makeText(this, String.valueOf(resValue), Toast.LENGTH_SHORT).show();
+        }
         if (selection.equalsIgnoreCase(getResources().getString(R.string.numbers_selection))) {
             tvOutput.setText(String.valueOf(ElementsCalculator.getNumbersCount(userInputText)));
         }
