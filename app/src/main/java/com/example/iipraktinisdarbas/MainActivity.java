@@ -12,6 +12,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import static com.example.iipraktinisdarbas.utils.ElementsCalculator.getCharsCount;
+import static com.example.iipraktinisdarbas.utils.ElementsCalculator.getNumbersCount;
+import static com.example.iipraktinisdarbas.utils.ElementsCalculator.getWordsCount;
 
 import com.example.iipraktinisdarbas.utils.ElementsCalculator;
 
@@ -41,28 +43,20 @@ public class MainActivity extends AppCompatActivity {
         String userInputText = edUserInput.getText().toString();
         String selection = this.ddSelection.getSelectedItem().toString();
 
-        if (selection.equalsIgnoreCase(getResources().getString(R.string.words_selection))) {
+        if (userInputText.isEmpty()) {
+            String resValue = getResources().getString(R.string.dff_format);
+            Toast.makeText(this, String.valueOf(resValue), Toast.LENGTH_SHORT).show();
+        }
+        else if (selection.equalsIgnoreCase(getResources().getString(R.string.words_selection))) {
             int count = ElementsCalculator.getCharsCount(userInputText);
             tvOutput.setText(String.valueOf(ElementsCalculator.getWordsCount(userInputText)));
         }
-        else {
-            String resValue = getResources().getString(R.string.dff_format);
-            Toast.makeText(this, String.valueOf(resValue), Toast.LENGTH_SHORT).show();
-        }
-        if (selection.equalsIgnoreCase(getResources().getString(R.string.char_selection))) {
+        else if (selection.equalsIgnoreCase(getResources().getString(R.string.char_selection))) {
             int count = ElementsCalculator.getCharsCount(userInputText);
             tvOutput.setText(String.valueOf(count));
         }
-        else {
-            String resValue = getResources().getString(R.string.dff_format);
-            Toast.makeText(this, String.valueOf(resValue), Toast.LENGTH_SHORT).show();
-        }
-        if (selection.equalsIgnoreCase(getResources().getString(R.string.numbers_selection))) {
+        else if (selection.equalsIgnoreCase(getResources().getString(R.string.numbers_selection))) {
             tvOutput.setText(String.valueOf(ElementsCalculator.getNumbersCount(userInputText)));
-        }
-        else {
-            String resValue = getResources().getString(R.string.dff_format);
-            Toast.makeText(this, String.valueOf(resValue), Toast.LENGTH_SHORT).show();
-        }
+        };
     }
 }

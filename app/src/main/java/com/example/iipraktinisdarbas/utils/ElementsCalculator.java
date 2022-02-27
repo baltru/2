@@ -1,9 +1,11 @@
 package com.example.iipraktinisdarbas.utils;
 
+import com.example.iipraktinisdarbas.R;
+
 public class ElementsCalculator {
-    public static int getCharsCount(String inputText) {
-        if (inputText != null) {
-            return inputText.length();
+    public static int getCharsCount(String userInputText) {
+        if (userInputText != null) {
+            return userInputText.length();
         }
         return 0;
     }
@@ -18,10 +20,11 @@ public class ElementsCalculator {
         }
         return count;
     }
-    public static int getWordsCount(String inputText) {
-        if (inputText == null || inputText.isEmpty())
+
+    public static int getWordsCount(String userInputText) {
+        if (userInputText.isEmpty())
             return 0;
-        String[] words = inputText.split("\\s+");
+        String[] words = userInputText.split("\\s+");
         return words.length;
-        }
+    }
 }
