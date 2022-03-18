@@ -1,7 +1,5 @@
 package com.example.iipraktinisdarbas.utils;
 
-import com.example.iipraktinisdarbas.R;
-
 public class ElementsCalculator {
     public static int getCharsCount(String userInputText) {
         if (userInputText != null) {

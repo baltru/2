@@ -57,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         }
         else if (selection.equalsIgnoreCase(getResources().getString(R.string.numbers_selection))) {
             tvOutput.setText(String.valueOf(ElementsCalculator.getNumbersCount(userInputText)));
-        };
+        }
+        else {
+            this.tvOutput.setText(R.string.dff_format);
+        }
     }
 }
