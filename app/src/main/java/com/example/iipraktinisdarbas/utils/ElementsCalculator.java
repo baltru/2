@@ -2,9 +2,9 @@ package com.example.iipraktinisdarbas.utils;
 
 public class ElementsCalculator {
     public static int getCharsCount(String userInputText) {
-        if (userInputText != null) {
-            return userInputText.length();
-        }
+       if (userInputText != null) {
+           return userInputText.replace(" ", "").length();
+       }
         return 0;
     }
 

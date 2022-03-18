@@ -29,7 +29,7 @@ public class UnitTest {
 
     @Test
     public void Test_Given_EmptyString_When_getNumbersCount_IsCalled() {
-        String givenString = "1"; //jei įrašytume skaičių, testas fail'intų
+        String givenString = ""; //jei įrašytume skaičių, testas fail'intų
         int expectedResult = 0;
         int actualResult = ElementsCalculator.getNumbersCount(givenString);
 
@@ -62,6 +62,30 @@ public class UnitTest {
 
         assertEquals(expectedResult, actualResult);
     }
-    //
+    ////tikrinama, kai įvedami tik tarpai. Jei įvedamas tekstas, testas neigiamas, nei ne - neveikia.
+    @Test
+    public void Test_Given_Spaces_When_getCharsCount_IsCalled() {
+        String givenString = "    "; //jei įvedami tarpai be chars, skaičiuoja kaip 0
+        int expectedResult = 0;
+        int actualResult = ElementsCalculator.getCharsCount(givenString);
 
+        assertEquals(expectedResult, actualResult);
+    }
+    @Test
+    public void Test_Given_Spaces_When_getWordsCount_IsCalled() {
+        String givenString = "          "; //jei įvedami tarpai be words, skaičiuoja kaip 0
+        int expectedResult = 0;
+        int actualResult = ElementsCalculator.getWordsCount(givenString);
+
+        assertEquals(expectedResult, actualResult);
+    }
+    @Test
+    public void Test_Given_Spaces_When_getNumbersCount_IsCalled() {
+        String givenString = "  "; //jei įvedami tarpai be skaičių, skaičiuoja kaip 0
+        int expectedResult = 0;
+        int actualResult = ElementsCalculator.getNumbersCount(givenString);
+
+        assertEquals(expectedResult, actualResult);
+    }
 }
+
